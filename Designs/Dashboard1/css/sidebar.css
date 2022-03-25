@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --principal-font-family: "Poppins";
+  --color-1: #8c4af2;
+  --color-2: #6f27db;
+  --side-zindex: 2;
+  --side_bar-background: linear-gradient(
+    to top right,
+    var(--color-1),
+    var(--color-2)
+  );
+  --principal-border_radius: 26px;
+  --side_bar-width: 180px;
+  --side_bar-height: 92vh;
+}
+
+ion-icon {
+  pointer-events: none;
+}
+.side_bar,
+.side_bar * {
+  font-family: var(--principal-font-family);
+}
+.side_bar {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  margin: 0;
+  width: var(--side_bar-width);
+  height: var(--side_bar-height);
+  background: var(--side_bar-background);
+  border-radius: var(--principal-border_radius);
+  overflow: hidden;
+  color: white;
+  z-index: var(--side-zindex);
+  padding: 10px;
+  top: calc((100vh - var(--side_bar-height)) / 2);
+  left: 5px;
+}
+.side_bar__header {
+  display: flex;
+  flex: 1;
+}
+.side_bar__body {
+  display: flex;
+  justify-content: center;
+  flex: 3;
+}
+.side_bar__footer {
+  flex: 1;
+}
+.ad_message {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: var(--principal-border_radius);
+}
+.side_bar a {
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 16px;
+  transition: background-color 0.2s ease-in;
+}
+.side_bar a {
+  text-decoration: none;
+  color: unset;
+}
+.side_bar a:hover {
+  opacity: 0.9;
+  background-color: #7621f5;
+}
+.side_bar__body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.side_bar__body a ion-icon {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 15px;
+  vertical-align: text-bottom;
+}
+.side_bar__brand {
+  align-self: center;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.ad_message__principal_icon ion-icon {
+  margin: 10px 0 0 10px;
+  font-size: 26px;
+  color: var(--color-1);
+}
+.ad_message__options button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+.ad_message__options button:hover ion-icon {
+  color: var(--color-2);
+}
+.ad_message__options ion-icon {
+  font-size: 26px;
+  color: var(--color-1);
+}
+.ad_message__body {
+  padding: 0 5px;
+}
+.ad_message__title_message {
+  color: var(--color-1);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: 1.3px;
+  margin-bottom: 2.5px;
+}
+.ad_message__message {
+  font-size: 12px;
+  color: var(--color-1);
+}

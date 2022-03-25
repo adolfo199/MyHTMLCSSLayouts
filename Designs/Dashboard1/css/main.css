@@ -1,0 +1,37 @@
+:root {
+  --main-bk-color: linear-gradient(
+    to right,
+    rgb(226, 211, 225),
+    rgb(206, 169, 203)
+  );
+}
+* {
+  box-sizing: border-box !important;
+  font-family: var(--principal-font-family);
+  caret-color: var(--color-1);
+}
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 5px;
+  height: 100vh;
+  width: 100vw;
+}
+main {
+  margin: 0;
+  display: block;
+  background: var(--main-bk-color);
+  width: calc(100% - (var(--side_bar-width) / 2));
+  height: 100%;
+  border-radius: var(--principal-border_radius);
+  margin-left: calc(var(--side_bar-width) / 2);
+  padding: calc((100vh - var(--side_bar-height)) / 2);
+  padding-left: calc(var(--side_bar-width) / 2 + 40px);
+  border-top: 0;
+}
+.main-content {
+  height: 100%;
+}
