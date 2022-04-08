@@ -1,5 +1,6 @@
 :root {
   --general-form-shadow: 0px 0px 6px 1px #00000028;
+  --bg-color: linear-gradient(to left top, red, var(--color-2));
 }
 .search_box {
   display: flex;
@@ -76,4 +77,72 @@
 }
 .card_with_link__link a:hover ion-icon {
   background: var(--color-2);
+}
+
+.mini-info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 120px;
+  background-color: white;
+  box-shadow: var(--general-form-shadow);
+  border-radius: var(--principal-border_radius);
+  width: 220px;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.mini-info-cards:hover {
+  background-color: rgba(245, 245, 245, 0.5);
+}
+.mini-info-cards__icon {
+  display: flex;
+  flex: 0 0 100%;
+  color: white;
+  font-size: 32px;
+}
+.mini-info-cards__icon ion-icon {
+  display: flex;
+  align-self: center;
+  background-color: var(--color-2);
+  padding: 10px;
+  border-radius: 16px;
+}
+.mini-info-cards__title {
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+.mini-info-cards__main {
+  flex: 0 0 auto;
+  font-size: 28px;
+  font-weight: bolder;
+  color: var(--color-1);
+}
+.mini-info-cards__footer {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-1);
+}
+/*------------------------*/
+.progress-ring {
+  /* border: 1px solid red; */
+}
+.progress-ring__circle {
+  display: block;
+  transition: 0.35s all linear;
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+}
+.progress-ring__percentaje-info {
+  border: 1px solid red;
+  font-size: 28px;
+  font-weight: bold;
+}
+.progress-ring__border-end {
+  transition: 0.35s all linear;
 }

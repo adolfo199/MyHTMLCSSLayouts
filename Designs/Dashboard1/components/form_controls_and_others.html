@@ -32,12 +32,46 @@
         </div>
     </div>
     <hr>
+    <div class="mini-info-cards">
+        <div class="mini-info-cards__icon">
+            <ion-icon name="flag"></ion-icon>
+        </div>
+        <div class="mini-info-cards__title">New Suscribers</div>
+        <div class="mini-info-cards__main">5046</div>
+        <div class="mini-info-cards__footer">+15.00%</div>
+    </div>
+    <hr>
+    <svg class="progress-ring" width="200" height="200">
+
+        <circle class="progress-ring__circle" stroke="var(--color-1)" stroke-width="14" fill="transparent" r="92"
+            cx="100" cy="100" />
+
+        <circle stroke="var(--color-2)" stroke-width="12" fill="var(--color-1)" r="50" cx="100" cy="100" />
+
+        <circle class="progress-ring__border-start" stroke="var(--color-1)" stroke-width="3.5" fill="var(--color-1)"
+            r="5" />
+
+        <circle class=" progress-ring__border-end" stroke="var(--color-1)" stroke-width="3.5" fill="white" r="5" cx="0"
+            cy="0" />
+
+
+
+        <text class="progress-ring__percentaje-info" x="70" y="110" fill="white" width="100"></text>
+
+    </svg>
+    <input id="process-ring__input" value="10" type="number" step="5" min="0" max="100" placeholder="progress">
     <canvas class="" id="mychart"></canvas>
+
+
+
+
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
-        integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
-    <script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+        integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script> -->
+    <!-- <script>
+        
         let mychartContainer = document.getElementById('mychart');
         let ctx = mychartContainer.getContext("2d");
 
@@ -69,6 +103,50 @@
                 }
             }
         });
+    </script> -->
+    <script>
+        var circle = document.querySelector('circle');
+        var textPercentaje = document.querySelector(".progress-ring__percentaje-info");
+        var roundCorner = document.querySelector('.progress-ring__border-end')
+        var roundCornerStar = document.querySelector('.progress-ring__border-start')
+
+        var radius = circle.r.baseVal.value;
+        let { x, y } = getBorderEndPosition(radius, 0, -45 * Math.PI / 180);
+        roundCornerStar.style = `transform:translate(${x}px,${y}px)`;
+
+        var circumference = radius * 2 * Math.PI;
+
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = `${circumference}`;
+        function setProgress(percent) {
+            const offset = circumference - percent / 100 * circumference;
+            circle.style.strokeDashoffset = offset;
+            textPercentaje.innerHTML = `${percent}%`;
+            let desfase = 45 * Math.PI / 180;
+            let { x, y } = getBorderEndPosition(circle.r.baseVal.value, percent, - desfase);
+            roundCorner.style = `transform:translate(${x}px,${y}px)`;
+            //  setAttribute("cx", x);
+            // roundCorner.setAttribute("cy", y);
+        }
+        function getBorderEndPosition(r, percent, desfase) {
+            let x = r * 2 + 8;
+            let y = 101;
+            let angle = 2 * Math.PI * percent / 100 + desfase;
+            x = r + r * Math.cos(angle) + 8;
+            y = r + r * Math.sin(angle) + 8;
+            return { x, y };
+        }
+        const input = document.querySelector('input#process-ring__input');
+        setProgress(input.value);
+
+        input.addEventListener('change', function (e) {
+            if (input.value < 101 && input.value > -1) {
+                setProgress(input.value);
+            }
+        })
+
+
+
     </script>
 </body>
 
