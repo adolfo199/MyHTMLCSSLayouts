@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-:root {
-  --principal-font-family: "Poppins";
+.light-theme {
   --color-1: #8c4af2;
   --color-2: #6f27db;
-  --side-zindex: 2;
   --side_bar-background: linear-gradient(
     to top right,
     var(--color-1),
@@ -14,6 +12,34 @@
     #8d4af27b,
     #6f27dba6
   );
+  --main-bk-color: linear-gradient(
+    to right,
+    rgb(226, 211, 225),
+    rgb(206, 169, 203)
+  );
+  --body-bkg-color: white;
+  --principal-font-color: black;
+}
+.dark-theme {
+  --color-1: #2a2a47;
+  --color-2: #391370;
+  --side_bar-background: linear-gradient(
+    to top right,
+    var(--color-1),
+    var(--color-2)
+  );
+  --side_bar-mobil-background: linear-gradient(
+    to top right,
+    #2a2a477b,
+    #391370a6
+  );
+  --main-bk-color: linear-gradient(to right, rgb(53, 50, 53), rgb(59, 49, 59));
+  --body-bkg-color: #2a2a477b;
+  --principal-font-color: white;
+}
+:root {
+  --principal-font-family: "Poppins";
+  --side-zindex: 2;
   --principal-border_radius: 26px;
   --side_bar-width: 180px;
   --side_bar-height: 92vh;
