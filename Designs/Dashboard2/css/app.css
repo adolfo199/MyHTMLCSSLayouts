@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap");
+body {
+  height: 100vh;
+  width: 100vw;
+  --side-bar__icons_bar-width: 70px;
+  --side-bar__icons_bar-padding: calc(var(--side-bar__icons_bar-width) / 5);
+  --side-bar__icons_bar-icons-border-radius: 8px;
+  --side-bar-width: 280px;
+  --app__container-padding: 0.3em;
+  --side-bar__menu__content-zindex: 1;
+  --side-bar__menu_content_menus-zindex: 2;
+  --side-bar__icons-bar-zindex: 3;
+  --side-bar__toggle_btn-zindex: 4;
+  --side-bar-menu__appears-animation-time: 0.3s;
+  --side-bar__menu__content-transition: left
+    var(--side-bar-menu__appears-animation-time) ease-in-out;
+  --side-bar__toggle_btn-size: 30px;
+  --on-toggle-transition-time: 0.3s;
+  --on-toggle-transition: width var(--on-toggle-transition-time) ease-in-out;
+}
+.app__container {
+  background-color: var(--app-bkg-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: var(--app__container-padding);
+}
+.app__content {
+  flex: 1;
+}
+.side_bar {
+  display: flex;
+  width: var(--side-bar__icons_bar-width);
+  position: sticky;
+  top: var(--app__container-padding);
+  overflow: hidden;
+  transition: var(--on-toggle-transition);
+}
+.side_bar__icons_bar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--side-bar-darken-color);
+  width: var(--side-bar__icons_bar-width);
+  height: 100%;
+  padding: var(--side-bar__icons_bar-padding);
+  padding-top: calc(var(--side-bar__icons_bar-padding));
+  border-radius: var(--side-bar__icons_bar-icons-border-radius);
+  box-shadow: var(--side-bar__icons_bar-icons-shadow);
+  transition: border-radius calc(var(--on-toggle-transition-time) * 2)
+    ease-in-out;
+  position: sticky;
+  z-index: var(--side-bar__icons-bar-zindex);
+}
+.side_bar.toggled > .side_bar__icons_bar {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: none;
+}
+.side_bar.toggled {
+  width: var(--side-bar-width);
+}
+.side_bar__icons_bar__brand {
+  margin-bottom: 20px;
+}
+.side_bar__icons_bar__brand span {
+  color: var(--side-bar__icons_bar-icons-color);
+  padding: 8px;
+  background-color: var(--side-bar__icons_bar-icons-bkg-color);
+  border-radius: var(--side-bar__icons_bar-icons-border-radius);
+  text-align: center;
+}
+.side_bar__icons_bar__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.side_bar__icons_bar__menu span {
+  color: var(--side-bar__icons_bar-icons-color);
+  padding: 8px;
+  border-radius: var(--side-bar__icons_bar-icons-border-radius);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.side_bar__icons_bar__menu :is(span.selected, span:hover) {
+  background-color: var(--side-bar__icons_bar-icons-bkg-color);
+}
+.side_bar__icons_bar_configs {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+.side_bar__icons_bar_configs span {
+  padding: 8px;
+  color: var(--side-bar__icons_bar-icons-color);
+  text-align: center;
+}
+.side_bar__icons_bar__profile {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.side_bar__icons_bar__profile img {
+  width: calc(var(--side-bar__icons_bar-width) - 25px);
+  height: calc(var(--side-bar__icons_bar-width) - 25px);
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center center;
+  border: 2px solid var(--side-bar__icons_bar-icons-color);
+}
+.side_bar__content {
+  display: block;
+  width: 0;
+  height: 100%;
+  background-color: var(--side-bar-color);
+  overflow: hidden;
+  padding: 0;
+  transition: var(--on-toggle-transition);
+}
+.side_bar.toggled > .side_bar__content {
+  width: 100%;
+  padding: var(--side-bar__icons_bar-padding);
+  padding-top: calc(var(--side-bar__icons_bar-padding) * 1.6);
+}
+:not(.side_bar.toggled) > .side_bar__content > * {
+  display: none !important;
+  /* opacity: 0; */
+}
+.side_bar__content__title {
+  color: var(--side-bar__title-color);
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Poppins";
+}
+.side_bar__content__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+  position: absolute;
+  left: -200%;
+  margin: 0;
+  opacity: 0;
+  transition: var(--side-bar__menu__content-transition);
+}
+.side_bar__content__menu li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-indent: 0;
+  color: var(--side-bar__menu__items-color);
+  border-radius: var(--side-bar__icons_bar-icons-border-radius);
+  padding: 3px 6px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out;
+}
+.side_bar__content__menu li a {
+  width: 100%;
+  color: inherit;
+  font-size: 14px;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+}
+.side_bar__content__menu :is(li:hover, li.active) {
+  background-color: var(--side-bar__icons_bar-icons-bkg-color);
+}
+.side_bar__content__menu.open {
+  left: calc(
+    var(--side-bar__icons_bar-width) + var(--side-bar__icons_bar-padding)
+  );
+  opacity: 1;
+}
+.side_bar__content__menu__item__icon {
+  vertical-align: middle;
+  font-size: 10px;
+  color: var(--side-bar__icons_bar-icons-color);
+  margin-right: 10px;
+}
+
+.side_bar__toggle_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 0;
+  height: var(--side-bar__toggle_btn-size);
+  width: var(--side-bar__toggle_btn-size);
+  border-radius: 50%;
+  color: var(--side-bar__menu__items-color);
+  z-index: var(--side-bar__toggle_btn-zindex);
+  left: calc(
+    var(--side-bar__icons_bar-width) - var(--side-bar__toggle_btn-size)
+  );
+  cursor: pointer;
+  /* transition: transform var(--side-bar-menu__appears-animation-time) ease-in-out; */
+  transform: rotate(0deg);
+  user-select: none;
+}
+.side_bar__toggle_btn span {
+  font-size: 24px;
+  margin: 0;
+}
+.side_bar__toggle_btn:hover {
+  text-shadow: 0px 0px 9px var(--side-bar__icons_bar-icons-color);
+}
+.side_bar.toggled > .side_bar__toggle_btn {
+  transform: rotate(180deg);
+  left: calc(var(--side-bar-width) - var(--side-bar__toggle_btn-size));
+}
+/*Break points*/
+@media (max-width: 575.98px) {
+}
+
+@media (max-width: 767.98px) {
+}
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 1199.98px) {
+}

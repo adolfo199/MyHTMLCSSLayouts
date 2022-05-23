@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="theme__light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/light-theme.css" />
+    <link rel="stylesheet" href="css/dark-theme.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app__container">
+      <div class="side_bar" id="app_side_bar">
+        <div class="side_bar__icons_bar">
+          <div class="side_bar__icons_bar__brand">
+            <span class="material-icons-outlined"> diamond </span>
+          </div>
+          <div class="side_bar__icons_bar__menu">
+            <span class="material-icons-outlined icon_men" menuName="home">
+              home
+            </span>
+            <span class="material-icons-outlined icon_men" menuName="analytics">
+              analytics
+            </span>
+            <span class="material-icons-outlined icon_men" menuName="layers">
+              layers
+            </span>
+            <span class="material-icons-outlined icon_men" menuName="checks">
+              playlist_add_check
+            </span>
+            <span class="material-icons-outlined icon_men" menuName="goals">
+              flag
+            </span>
+            <span class="material-icons-outlined icon_men" menuName="persons">
+              people_alt
+            </span>
+          </div>
+          <div class="side_bar__icons_bar_configs">
+            <span class="material-icons-outlined"> support </span>
+            <span class="material-icons-outlined"> settings </span>
+          </div>
+          <div class="side_bar__icons_bar__profile">
+            <img src="img/person.jpg" />
+          </div>
+        </div>
+        <div class="side_bar__content">
+          <div class="side_bar__content__title">Dashboard</div>
+          <div class="side_bar__menus">
+            <ul class="side_bar__content__menu" menuFor="home">
+              <li class="side_bar__content__menu__option">
+                <a href="">
+                  <span
+                    class="material-icons-outlined side_bar__content__menu__item__icon"
+                    >grid_view</span
+                  >
+                  Principal</a
+                >
+              </li>
+              <li class="side_bar__content__menu__option">
+                <a href="">
+                  <span
+                    class="material-icons-outlined side_bar__content__menu__item__icon"
+                    >person</span
+                  >
+                  Customers</a
+                >
+              </li>
+              <li class="side_bar__content__menu__option">
+                <a href="">
+                  <span
+                    class="material-icons-outlined side_bar__content__menu__item__icon"
+                    >notifications</span
+                  >
+                  Notifications</a
+                >
+              </li>
+            </ul>
+            <ul class="side_bar__content__menu" menuFor="analytics">
+              <li class="side_bar__content__menu__option">
+                <a href="">
+                  <span
+                    class="material-icons-outlined side_bar__content__menu__item__icon"
+                    >grid_view</span
+                  >
+                  Principal</a
+                >
+              </li>
+              <li class="side_bar__content__menu__option">
+                <a href="">
+                  <span
+                    class="material-icons-outlined side_bar__content__menu__item__icon"
+                    >real_estate_agent</span
+                  >
+                  Monthly sales</a
+                >
+              </li>
+              <li class="side_bar__content__menu__option">
+                <a href="">
+                  <span
+                    class="material-icons-outlined side_bar__content__menu__item__icon"
+                    >query_stats</span
+                  >
+                  Employees Stats</a
+                >
+              </li>
+            </ul>
+            <ul class="side_bar__content__menu" menuFor="layers"></ul>
+            <ul class="side_bar__content__menu" menuFor="checks"></ul>
+            <ul class="side_bar__content__menu" menuFor="goals"></ul>
+            <ul class="side_bar__content__menu" menuFor="persons"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="app__content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
+        recusandae dicta dolorum in numquam porro odit illo aut accusantium,
+        deleniti odio modi? Ab animi dolorem officia praesentium consectetur
+        molestias facere!
+      </div>
+    </div>
+    <script src="js/sideBar.js"></script>
+    <script>
+      initializeSideBar("app_side_bar", true);
+    </script>
+  </body>
+</html>

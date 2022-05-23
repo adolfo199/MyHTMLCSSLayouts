@@ -1,0 +1,10 @@
+.theme__dark {
+  --app-bkg-color: rgb(231, 226, 236);
+  --side-bar-darken-color: #4f063e;
+  --side-bar-color: #60065b;
+  --side-bar__icons_bar-icons-color: rgba(255, 255, 255, 0.699);
+  --side-bar__icons_bar-icons-bkg-color: rgba(255, 255, 255, 0.4);
+  --side-bar__icons_bar-icons-shadow: inset -3px 0px 9px #00000026;
+  --side-bar__title-color: white;
+  --side-bar__menu__items-color: white;
+}
