@@ -7,13 +7,15 @@ function initializeSideBar(sidebarId, debug = false) {
     if (debug) console.log(`Clicking '${menuName}'`);
 
     if (menuName == currentMenuName || !sidebar.classList.contains("toggled"))
-      onToggleBtnClick();
+      sidebar.classList.toggle("toggled");
     if (menuName == currentMenuName) return;
     if (!showMenu(menuName)) return;
     menuIconClicked.classList.add("selected");
   }
   function onToggleBtnClick() {
-    sidebar.classList.toggle("toggled");
+    sidebar.classList.toggle("hidden");
+    if (sidebar.classList.contains("toggled"))
+      sidebar.classList.remove("toggled");
   }
   function showMenu(menuName) {
     let menuToShow = document.querySelector(
@@ -45,7 +47,12 @@ function initializeSideBar(sidebarId, debug = false) {
     throw new Error(
       `SideBar icons menu with className side_bar__icons_bar__menu not found`
     );
-
+  let sidebarToggleBtn = document.querySelector(".side_bar__toggle_btn");
+  if (!sidebarToggleBtn)
+    throw new Error(
+      `SideBar Toggle button  with className side_bar__toggle_btn not found`
+    );
   if (debug) console.log("Side bar initialized successfully");
   sidebarIconsMenu.addEventListener("click", onMenuIconItemClick);
+  sidebarToggleBtn.addEventListener("click", onToggleBtnClick);
 }

@@ -2,6 +2,8 @@
 body {
   height: 100vh;
   width: 100vw;
+}
+:root {
   --side-bar__icons_bar-width: 70px;
   --side-bar__icons_bar-padding: calc(var(--side-bar__icons_bar-width) / 5);
   --side-bar__icons_bar-icons-border-radius: 8px;
@@ -27,6 +29,7 @@ body {
 }
 .app__content {
   flex: 1;
+  overflow-y: auto;
 }
 .side_bar {
   display: flex;
@@ -184,23 +187,22 @@ body {
 }
 
 .side_bar__toggle_btn {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: sticky;
   padding: 0;
   height: var(--side-bar__toggle_btn-size);
   width: var(--side-bar__toggle_btn-size);
   border-radius: 50%;
   color: var(--side-bar__menu__items-color);
-  z-index: var(--side-bar__toggle_btn-zindex);
-  left: calc(
-    var(--side-bar__icons_bar-width) - var(--side-bar__toggle_btn-size)
-  );
+  background-color: var(--side-bar-darken-color);
+  left: 5px;
+  top: 5px;
   cursor: pointer;
-  /* transition: transform var(--side-bar-menu__appears-animation-time) ease-in-out; */
   transform: rotate(0deg);
   user-select: none;
+  transition: left var(--on-toggle-transition-time) ease-in-out;
 }
 .side_bar__toggle_btn span {
   font-size: 24px;
@@ -209,15 +211,41 @@ body {
 .side_bar__toggle_btn:hover {
   text-shadow: 0px 0px 9px var(--side-bar__icons_bar-icons-color);
 }
-.side_bar.toggled > .side_bar__toggle_btn {
+:not(.side_bar.hidden) ~ .app__content .side_bar__toggle_btn {
   transform: rotate(180deg);
-  left: calc(var(--side-bar-width) - var(--side-bar__toggle_btn-size));
+  left: calc(var(--side-bar__icons_bar-width) + 10px);
+}
+:not(.side_bar.hidden).toggled ~ .app__content .side_bar__toggle_btn {
+  /* display: none; */
+  left: calc(var(--side-bar-width) + 10px);
 }
 /*Break points*/
 @media (max-width: 575.98px) {
 }
 
 @media (max-width: 767.98px) {
+  :root {
+    --side-bar-width: 400px;
+  }
+  .side_bar {
+    position: absolute;
+    height: calc(100vh - var(--app__container-padding) * 2);
+    max-width: calc(100vw - var(--app__container-padding) * 2);
+    transition: var(--on-toggle-transition),
+      left var(--on-toggle-transition-time) ease-in-out;
+    left: var(--app__container-padding);
+  }
+  .side_bar__icons_bar {
+    background-color: var(--side-bar__icons_bar-icons-bkg-mobile-color);
+    backdrop-filter: blur(2px);
+  }
+  .side_bar__toggle_btn {
+    display: flex;
+    z-index: 1 !important;
+  }
+  .side_bar.hidden {
+    left: calc(-1 * var(--side-bar__icons_bar-width));
+  }
 }
 
 @media (max-width: 991.98px) {

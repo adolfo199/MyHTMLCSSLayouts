@@ -1,10 +1,10 @@
-.theme__light {
+.theme__way {
   --app-bkg-color: rgb(231, 226, 236);
-  --side-bar-darken-color: #064f32;
-  --side-bar-color: #06603a;
+  --side-bar-darken-color: #b31067;
+  --side-bar-color: #ff1493;
   --side-bar__icons_bar-icons-color: rgba(255, 255, 255, 0.699);
   --side-bar__icons_bar-icons-bkg-color: rgba(255, 255, 255, 0.4);
-  --side-bar__icons_bar-icons-bkg-mobile-color: #064f32e4;
+  --side-bar__icons_bar-icons-bkg-mobile-color: #b31067e4;
   --side-bar__icons_bar-icons-shadow: inset -3px 0px 9px #00000026;
   --side-bar__title-color: white;
   --side-bar__menu__items-color: white;
