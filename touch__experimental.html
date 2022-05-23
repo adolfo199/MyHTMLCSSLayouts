@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="slider" style="height: 100vh;width: 100vw;background-color: red;">
+
+    <script>
+        let touchstartX = 0
+        let touchendX = 0
+
+        const slider = document.getElementById('slider')
+
+        function handleGesture() {
+            if (touchendX < touchstartX) alert('swiped left!')
+            if (touchendX > touchstartX) alert('swiped right!')
+        }
+
+        slider.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX
+        })
+
+        slider.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX
+            handleGesture()
+        })</script>
+</body>
+
+</html>

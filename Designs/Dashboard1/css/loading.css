@@ -1,0 +1,62 @@
+:root {
+  --color-1: #8c4af2;
+  --color-2: #585df9;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 16px;
+  width: 8em;
+  height: 8em;
+  padding: 0.2em;
+  border: 1em solid var(--color-2);
+  outline: 0.4em solid var(--color-1);
+  /* border-top-style: double; */
+  /* border-bottom-style: dotted; */
+  box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to top left, var(--color-1), var(--color-2));
+  border-radius: 50% / 50%;
+  transition: border-radius 15s ease-in;
+  animation: rotate 15s infinite alternate-reverse,
+    hue-rotate 15s infinite alternate-reverse;
+}
+.loading span {
+  display: block;
+  animation: invert-rotate 15s infinite alternate-reverse;
+  font-family: sans-serif;
+  color: transparent;
+  font-weight: bolder;
+}
+@keyframes invert-rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(60deg);
+  }
+}
