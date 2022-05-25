@@ -5,6 +5,8 @@
   --side-bar__icons_bar-icons-color: rgba(255, 255, 255, 0.699);
   --side-bar__icons_bar-icons-bkg-color: rgba(255, 255, 255, 0.4);
   --side-bar__icons_bar-icons-bkg-mobile-color: #064f32e4;
+  --side-bar__icons_bar-icons-tooltip-color: #c7f6c8;
+  --side-bar__icons_bar-icons-tooltip-bkg-color: #82828270;
   --side-bar__icons_bar-icons-shadow: inset -3px 0px 9px #00000026;
   --side-bar__title-color: white;
   --side-bar__menu__items-color: white;

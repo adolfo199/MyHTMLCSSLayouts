@@ -1,8 +1,9 @@
 function initializeSideBar(sidebarId, debug = false) {
   let currentMenuName = "";
   function onMenuIconItemClick(target) {
-    if (!target.target.classList.contains("icon_men")) return;
-    let menuIconClicked = target.target;
+    if (!target.target.parentElement.classList.contains("icon_menu")) return;
+    let menuIconClicked = target.target.parentElement;
+    console.log(menuIconClicked);
     let menuName = menuIconClicked.getAttribute("menuName");
     if (debug) console.log(`Clicking '${menuName}'`);
 
@@ -21,6 +22,7 @@ function initializeSideBar(sidebarId, debug = false) {
     let menuToShow = document.querySelector(
       `.side_bar__content__menu[menuFor=${menuName}]`
     );
+    menu_title.innerText = menuToShow.getAttribute("menu-options-title");
     if (!menuToShow) {
       if (debug) console.log(`${menuName} menu not found`);
       return false;
@@ -30,7 +32,7 @@ function initializeSideBar(sidebarId, debug = false) {
     [...allMenus].forEach((menu) => {
       menu.classList.remove("open");
     });
-    let allIconMenus = document.querySelectorAll(".icon_men");
+    let allIconMenus = document.querySelectorAll(".icon_menu");
     [...allIconMenus].forEach((menu) => {
       menu.classList.remove("selected");
     });
@@ -52,6 +54,12 @@ function initializeSideBar(sidebarId, debug = false) {
     throw new Error(
       `SideBar Toggle button  with className side_bar__toggle_btn not found`
     );
+  let menu_title = document.querySelector(".side_bar__content__title");
+  if (!sidebarToggleBtn)
+    throw new Error(
+      `SideBar Menu Title with className side_bar__content__title not found`
+    );
+
   if (debug) console.log("Side bar initialized successfully");
   sidebarIconsMenu.addEventListener("click", onMenuIconItemClick);
   sidebarToggleBtn.addEventListener("click", onToggleBtnClick);

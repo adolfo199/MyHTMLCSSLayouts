@@ -40,7 +40,7 @@ body {
   width: var(--side-bar__icons_bar-width);
   position: sticky;
   top: var(--app__container-padding);
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: var(--on-toggle-transition);
 }
 .side_bar__icons_bar {
@@ -49,14 +49,15 @@ body {
   background-color: var(--side-bar-darken-color);
   width: var(--side-bar__icons_bar-width);
   height: 100%;
-  padding: var(--side-bar__icons_bar-padding);
-  padding-top: calc(var(--side-bar__icons_bar-padding));
+  /* padding: var(--side-bar__icons_bar-padding); */
+  padding: calc(var(--side-bar__icons_bar-padding)) 0;
   border-radius: var(--side-bar__icons_bar-icons-border-radius);
   box-shadow: var(--side-bar__icons_bar-icons-shadow);
   transition: border-radius calc(var(--on-toggle-transition-time) * 2)
     ease-in-out;
   position: sticky;
   z-index: var(--side-bar__icons-bar-zindex);
+  align-items: center;
 }
 .side_bar.toggled > .side_bar__icons_bar {
   border-top-right-radius: 0;
@@ -80,8 +81,21 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: var(--side-bar__icons_bar-width);
+  align-items: center;
 }
-.side_bar__icons_bar__menu span {
+.icon_menu {
+  height: 40px;
+  transition: all var(--on-toggle-transition-time) ease-in-out;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.icon_menu[menu-title]:hover {
+  height: 64px;
+}
+.side_bar__icons_bar__menu .icon_menu span {
   color: var(--side-bar__icons_bar-icons-color);
   padding: 8px;
   border-radius: var(--side-bar__icons_bar-icons-border-radius);
@@ -90,8 +104,11 @@ body {
   user-select: none;
   transition: background-color 0.3s ease-in-out;
 }
-.side_bar__icons_bar__menu :is(span.selected, span:hover) {
+.side_bar__icons_bar__menu .icon_menu :is(span.selected, span:hover) {
   background-color: var(--side-bar__icons_bar-icons-bkg-color);
+}
+.side_bar__icons_bar__menu .icon_menu:hover::after {
+  display: block;
 }
 .side_bar__icons_bar_configs {
   display: flex;
@@ -117,6 +134,23 @@ body {
   object-position: center center;
   border: 2px solid var(--side-bar__icons_bar-icons-color);
 }
+.icon_menu[menu-title]::after {
+  display: none;
+  content: attr(menu-title);
+  position: relative;
+  background-color: var(--side-bar__icons_bar-icons-tooltip-bkg-color);
+  color: var(--side-bar__icons_bar-icons-tooltip-color);
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 3px 5px;
+  top: 4px;
+  text-align: center;
+  z-index: 5;
+  font-weight: 500;
+  font-family: "Poppins";
+  letter-spacing: 0.5px;
+  width: calc(100% - 5px);
+}
 .side_bar__content {
   display: block;
   width: 0;
@@ -124,22 +158,21 @@ body {
   background-color: var(--side-bar-color);
   overflow: hidden;
   padding: 0;
+  padding-top: calc(var(--side-bar__icons_bar-padding) * 1.6);
   transition: var(--on-toggle-transition);
 }
 .side_bar.toggled > .side_bar__content {
   width: 100%;
-  padding: var(--side-bar__icons_bar-padding);
-  padding-top: calc(var(--side-bar__icons_bar-padding) * 1.6);
 }
-:not(.side_bar.toggled) > .side_bar__content > * {
-  display: none !important;
-  /* opacity: 0; */
+:not(.side_bar.toggled) > .side_bar__content .side_bar__content__menu {
+  left: -200%;
 }
 .side_bar__content__title {
   color: var(--side-bar__title-color);
   font-weight: 700;
   font-size: 14px;
   font-family: "Poppins";
+  margin-left: var(--side-bar__icons_bar-padding);
 }
 .side_bar__content__menu {
   display: flex;
@@ -170,7 +203,7 @@ body {
   font-size: 14px;
   text-align: left;
   font-family: "Poppins";
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   letter-spacing: 1.2px;
 }
