@@ -55,4 +55,20 @@ function initializeSideBar(sidebarId, debug = false) {
   if (debug) console.log("Side bar initialized successfully");
   sidebarIconsMenu.addEventListener("click", onMenuIconItemClick);
   sidebarToggleBtn.addEventListener("click", onToggleBtnClick);
+  document
+    .getElementsByTagName("body")[0]
+    .addEventListener("swiped-right", function () {
+      try {
+        onToggleBtnClick();
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  sidebar.addEventListener("swiped-left", function () {
+    try {
+      onToggleBtnClick();
+    } catch (error) {
+      console.log(error);
+    }
+  });
 }

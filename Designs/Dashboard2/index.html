@@ -1,253 +1,230 @@
 <!DOCTYPE html>
 <html lang="en" class="theme__way">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/light-theme.css" />
-    <link rel="stylesheet" href="css/dark-theme.css" />
-    <link rel="stylesheet" href="css/way-theme.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="app__container">
-      <div class="side_bar hidden" id="app_side_bar">
-        <div class="side_bar__icons_bar">
-          <div class="side_bar__icons_bar__brand">
-            <span class="material-icons-outlined"> diamond </span>
-          </div>
-          <div class="side_bar__icons_bar__menu">
-            <span class="material-icons-outlined icon_men" menuName="home">
-              home
-            </span>
-            <span class="material-icons-outlined icon_men" menuName="analytics">
-              analytics
-            </span>
-            <span class="material-icons-outlined icon_men" menuName="layers">
-              layers
-            </span>
-            <span class="material-icons-outlined icon_men" menuName="checks">
-              playlist_add_check
-            </span>
-            <span class="material-icons-outlined icon_men" menuName="goals">
-              flag
-            </span>
-            <span class="material-icons-outlined icon_men" menuName="persons">
-              people_alt
-            </span>
-          </div>
-          <div class="side_bar__icons_bar_configs">
-            <span class="material-icons-outlined"> support </span>
-            <span class="material-icons-outlined"> settings </span>
-          </div>
-          <div class="side_bar__icons_bar__profile">
-            <img src="img/person.jpg" />
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.css" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/light-theme.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" />
+  <link rel="stylesheet" href="css/way-theme.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+</head>
+
+<body data-swipe-threshold="150" data-swipe-timeout="250">
+  <div class="app__container">
+    <div class="side_bar hidden" id="app_side_bar" data-swipe-threshold="0" data-swipe-timeout="250">
+      <div class="side_bar__icons_bar">
+        <div class="side_bar__icons_bar__brand">
+          <span class="material-icons-outlined"> diamond </span>
         </div>
-        <div class="side_bar__content">
-          <div class="side_bar__content__title">Dashboard</div>
-          <div class="side_bar__menus">
-            <ul class="side_bar__content__menu" menuFor="home">
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >grid_view</span
-                  >
-                  Principal</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >person</span
-                  >
-                  Customers</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >notifications</span
-                  >
-                  Notifications</a
-                >
-              </li>
-            </ul>
-            <ul class="side_bar__content__menu" menuFor="analytics">
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >grid_view</span
-                  >
-                  Principal</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >real_estate_agent</span
-                  >
-                  Monthly sales</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >query_stats</span
-                  >
-                  Employees Stats</a
-                >
-              </li>
-            </ul>
-            <ul class="side_bar__content__menu" menuFor="layers"></ul>
-            <ul class="side_bar__content__menu" menuFor="checks"></ul>
-            <ul class="side_bar__content__menu" menuFor="goals"></ul>
-            <ul class="side_bar__content__menu" menuFor="persons"></ul>
-          </div>
+        <div class="side_bar__icons_bar__menu">
+          <span class="material-icons-outlined icon_men" menuName="home">
+            home
+          </span>
+          <span class="material-icons-outlined icon_men" menuName="analytics">
+            analytics
+          </span>
+          <span class="material-icons-outlined icon_men" menuName="layers">
+            layers
+          </span>
+          <span class="material-icons-outlined icon_men" menuName="checks">
+            playlist_add_check
+          </span>
+          <span class="material-icons-outlined icon_men" menuName="goals">
+            flag
+          </span>
+          <span class="material-icons-outlined icon_men" menuName="persons">
+            people_alt
+          </span>
+        </div>
+        <div class="side_bar__icons_bar_configs">
+          <span class="material-icons-outlined"> support </span>
+          <span class="material-icons-outlined"> settings </span>
+        </div>
+        <div class="side_bar__icons_bar__profile">
+          <img src="img/person.jpg" />
         </div>
       </div>
-      <div class="app__content">
-        <div class="side_bar__toggle_btn">
-          <span class="material-icons-outlined"> chevron_right </span>
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
-          recusandae dicta dolorum in numquam porro odit illo aut accusantium,
-          deleniti odio modi? Ab animi dolorem officia praesentium consectetur
-          molestias facere!
-          <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-          eveniet obcaecati veniam vel nostrum blanditiis quibusdam commodi
-          tempore, pariatur quam voluptatibus excepturi culpa sit unde dolores
-          harum perspiciatis eius tenetur esse qui dicta. Iusto ab, autem
-          voluptate eligendi rem deserunt nulla! Magni temporibus ullam
-          reiciendis? Vel blanditiis non asperiores sunt mollitia aliquam,
-          laborum quo? Natus quibusdam, maxime nobis unde amet qui voluptas fuga
-          quos eum minima nulla laboriosam possimus, deserunt voluptatibus
-          temporibus sunt debitis saepe. Harum repellendus nulla alias
-          distinctio saepe officiis maxime similique, fugit fuga repellat
-          eveniet provident recusandae, error voluptas molestiae odit eos!
-          Expedita fuga quos impedit libero culpa illo ipsa fugiat eum?
-          Molestiae reprehenderit in cum ea laborum minima culpa nulla quis
-          numquam modi qui, dolorem ad, consequatur harum omnis, sint
-          consectetur quibusdam cupiditate aspernatur? Deleniti ducimus vitae
-          fugiat asperiores doloremque veniam adipisci distinctio at molestiae.
-          Facilis delectus quam, voluptatem esse quos animi aut ut voluptas
-          quisquam, odit omnis, voluptatibus soluta dolorum suscipit culpa error
-          libero rerum molestiae? Architecto excepturi ab aliquid ea fugiat
-          alias qui nulla delectus? Minus, eos distinctio adipisci laborum
-          eligendi amet similique ut ratione earum numquam voluptatibus? At
-          deserunt placeat rerum, fugiat iusto ad, voluptates sequi cupiditate
-          totam consectetur, eos suscipit ducimus tenetur. Vel dicta consectetur
-          quibusdam quo, ad dolore error dolorum modi est doloribus debitis,
-          perspiciatis omnis explicabo iure, itaque voluptatibus perferendis
-          cupiditate magni consequatur soluta asperiores expedita fugit. Et sunt
-          minima aliquam similique dolorem doloremque, quidem commodi quae iure
-          architecto, doloribus ullam accusamus. Ratione voluptatum non dolore
-          odio saepe laboriosam minus numquam labore accusamus libero veniam
-          iusto perspiciatis cum reprehenderit culpa assumenda corporis totam
-          quasi, quidem, eligendi obcaecati, omnis atque repellat dignissimos.
-          Nisi error quod repellat aliquid ut explicabo eius ipsum, ab quasi
-          dolorem reprehenderit atque facilis et inventore similique unde porro
-          veritatis quae consequatur provident perferendis esse assumenda.
-          Dolore porro inventore, expedita at minima accusamus vel possimus
-          corporis enim dolor? Quisquam et deserunt ad. Sapiente alias repellat
-          saepe commodi iste modi. Adipisci natus quaerat odio perspiciatis?
-          Ipsam inventore quisquam, mollitia at veritatis qui cupiditate
-          explicabo vel. Officiis consectetur eveniet quos voluptas deleniti
-          officia incidunt dolor sequi laudantium non ratione quia aliquid
-          cupiditate reprehenderit iste dignissimos excepturi aspernatur,
-          quibusdam obcaecati et. Fugit, itaque pariatur molestiae quasi officia
-          temporibus quam iste? Repellendus ipsum sapiente, vitae provident
-          eaque ex nulla natus laborum. Esse iste impedit dolor magni molestiae
-          voluptatem, aliquam quidem earum aperiam cumque minus sit itaque
-          tempore sapiente ipsum quibusdam eius blanditiis quaerat corporis
-          quisquam reiciendis nobis reprehenderit laudantium! Porro quam
-          inventore nemo quia unde nam maxime perspiciatis, aspernatur assumenda
-          modi facere optio velit officiis voluptates culpa nostrum. Repudiandae
-          cum facere, ab accusantium excepturi hic unde quia aliquid, ipsam,
-          odio commodi asperiores consequuntur praesentium. Ipsum aperiam,
-          officia placeat velit, sed quod cupiditate dolor, saepe officiis nihil
-          magnam omnis veniam assumenda atque? Ut iusto, perferendis doloremque,
-          doloribus est earum voluptas laborum culpa itaque sunt quod mollitia
-          recusandae ab adipisci quibusdam repellendus eum! Soluta, ducimus
-          explicabo harum, eos nemo quis est iste consequuntur numquam eligendi
-          omnis obcaecati laborum quibusdam sapiente, enim exercitationem
-          aliquid veritatis nulla magnam alias odit! Perspiciatis placeat nobis
-          error facilis, earum porro, iusto non corrupti sapiente illum eum
-          excepturi soluta molestias minus hic ut illo ipsam recusandae impedit!
-          Necessitatibus saepe sed nesciunt dolore itaque harum quis iure
-          asperiores tenetur neque vel est amet, inventore excepturi, nihil quas
-          non veritatis rem quos, natus officia dolorum. Delectus similique non
-          fugit earum deserunt, commodi iure consequuntur odio exercitationem,
-          rem quas neque iste aut? Iste illo sit aliquam incidunt adipisci
-          laboriosam suscipit eos obcaecati mollitia enim blanditiis cumque
-          accusamus sequi, maiores possimus itaque iusto nam necessitatibus
-          aperiam ad saepe, in minus, nemo fugiat. Unde id alias necessitatibus,
-          sed odio explicabo iure, mollitia libero excepturi ducimus, ut quaerat
-          ratione in. Ex omnis reiciendis hic dignissimos facilis minima debitis
-          esse, alias molestias! Laboriosam tempora minus eos dicta! Nobis unde
-          doloribus accusamus, nam molestiae cum voluptate, eius exercitationem
-          nihil voluptas pariatur dicta excepturi porro soluta, doloremque quae
-          tempora odio beatae? Asperiores laboriosam officiis, perferendis
-          illum, praesentium ipsam facilis deserunt eligendi cupiditate
-          quibusdam, saepe molestias. Culpa incidunt alias eos in delectus, quae
-          ipsam quod odio ad exercitationem voluptatum soluta molestiae
-          explicabo perferendis rem ipsa sapiente, doloremque mollitia tempora
-          dolorem sunt ipsum aliquid. Fuga, adipisci. Doloribus placeat rerum
-          ratione obcaecati excepturi totam provident eius atque repudiandae.
-          Minus nulla nam iure ab officiis itaque perspiciatis vero dolorem
-          soluta inventore ipsum ratione error quaerat et facilis magnam at
-          asperiores natus, incidunt quo commodi. Hic aperiam, qui harum ratione
-          possimus reprehenderit neque non quis? Doloremque dolorum corporis
-          molestiae sunt. Id facilis aperiam debitis cum architecto, quia vitae
-          sint modi, a suscipit sapiente. Placeat exercitationem praesentium
-          voluptates laboriosam ex, repellendus culpa, ut, impedit deserunt quae
-          eveniet autem quos similique tempore sunt. Nobis est porro saepe
-          assumenda enim ut sapiente amet incidunt officia sunt, ipsa,
-          distinctio similique et soluta culpa, cupiditate nam eaque velit rerum
-          aperiam mollitia odio deleniti. Expedita eius excepturi quia officia
-          qui temporibus maiores in! Voluptas, incidunt? Necessitatibus eos
-          harum sint animi vero. Architecto eligendi est inventore repellat,
-          obcaecati explicabo aspernatur aliquam perspiciatis maxime quia dolor
-          velit. Sit dolore eligendi reiciendis nostrum repellendus debitis qui
-          modi, saepe libero labore at perspiciatis! Tempora ea modi quibusdam
-          provident esse at nisi id facere repellendus ad. Dolorum animi non
-          esse iure commodi mollitia voluptates officiis, iusto tempore nihil
-          saepe veritatis ducimus unde recusandae ratione nostrum nisi nesciunt.
-          Quidem adipisci consectetur libero? Similique qui nemo molestias ex
-          veniam tempore quisquam mollitia debitis, totam rerum excepturi aut
-          blanditiis quia autem facere deleniti impedit, quae pariatur
-          veritatis? Suscipit eveniet libero sapiente rerum maxime? Repudiandae
-          suscipit saepe officia, minus voluptas totam explicabo sint, libero
-          cupiditate reiciendis voluptates consequatur reprehenderit dolores
-          enim unde quidem! Incidunt possimus inventore velit beatae rem nihil
-          minima magni quo iusto sequi nulla mollitia deleniti consequatur
-          voluptates perferendis id laudantium consequuntur labore, quaerat
-          commodi rerum? Odit corrupti expedita pariatur modi illo quae quaerat
-          qui deserunt, id placeat autem, provident aspernatur recusandae dolore
-          ipsa voluptatem accusamus eum rerum quibusdam fuga mollitia in sint
-          reiciendis maiores. Atque repellendus minima iure reprehenderit,
-          aliquid quaerat neque dolorem repudiandae quas error!
+      <div class="side_bar__content">
+        <div class="side_bar__content__title">Dashboard</div>
+        <div class="side_bar__menus">
+          <ul class="side_bar__content__menu" menuFor="home">
+            <li class="side_bar__content__menu__option">
+              <a href="">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">grid_view</span>
+                Principal</a>
+            </li>
+            <li class="side_bar__content__menu__option">
+              <a href="">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">person</span>
+                Customers</a>
+            </li>
+            <li class="side_bar__content__menu__option">
+              <a href="">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">notifications</span>
+                Notifications</a>
+            </li>
+          </ul>
+          <ul class="side_bar__content__menu" menuFor="analytics">
+            <li class="side_bar__content__menu__option">
+              <a href="">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">grid_view</span>
+                Principal</a>
+            </li>
+            <li class="side_bar__content__menu__option">
+              <a href="">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">real_estate_agent</span>
+                Monthly sales</a>
+            </li>
+            <li class="side_bar__content__menu__option">
+              <a href="">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">query_stats</span>
+                Employees Stats</a>
+            </li>
+          </ul>
+          <ul class="side_bar__content__menu" menuFor="layers"></ul>
+          <ul class="side_bar__content__menu" menuFor="checks"></ul>
+          <ul class="side_bar__content__menu" menuFor="goals"></ul>
+          <ul class="side_bar__content__menu" menuFor="persons"></ul>
         </div>
       </div>
     </div>
-    <script src="js/sideBar.js"></script>
-    <script>
-      initializeSideBar("app_side_bar", true);
-    </script>
-  </body>
+    <div class="app__content">
+      <div class="side_bar__toggle_btn">
+        <span class="material-icons-outlined"> chevron_right </span>
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
+        recusandae dicta dolorum in numquam porro odit illo aut accusantium,
+        deleniti odio modi? Ab animi dolorem officia praesentium consectetur
+        molestias facere!
+        <br />
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        eveniet obcaecati veniam vel nostrum blanditiis quibusdam commodi
+        tempore, pariatur quam voluptatibus excepturi culpa sit unde dolores
+        harum perspiciatis eius tenetur esse qui dicta. Iusto ab, autem
+        voluptate eligendi rem deserunt nulla! Magni temporibus ullam
+        reiciendis? Vel blanditiis non asperiores sunt mollitia aliquam,
+        laborum quo? Natus quibusdam, maxime nobis unde amet qui voluptas fuga
+        quos eum minima nulla laboriosam possimus, deserunt voluptatibus
+        temporibus sunt debitis saepe. Harum repellendus nulla alias
+        distinctio saepe officiis maxime similique, fugit fuga repellat
+        eveniet provident recusandae, error voluptas molestiae odit eos!
+        Expedita fuga quos impedit libero culpa illo ipsa fugiat eum?
+        Molestiae reprehenderit in cum ea laborum minima culpa nulla quis
+        numquam modi qui, dolorem ad, consequatur harum omnis, sint
+        consectetur quibusdam cupiditate aspernatur? Deleniti ducimus vitae
+        fugiat asperiores doloremque veniam adipisci distinctio at molestiae.
+        Facilis delectus quam, voluptatem esse quos animi aut ut voluptas
+        quisquam, odit omnis, voluptatibus soluta dolorum suscipit culpa error
+        libero rerum molestiae? Architecto excepturi ab aliquid ea fugiat
+        alias qui nulla delectus? Minus, eos distinctio adipisci laborum
+        eligendi amet similique ut ratione earum numquam voluptatibus? At
+        deserunt placeat rerum, fugiat iusto ad, voluptates sequi cupiditate
+        totam consectetur, eos suscipit ducimus tenetur. Vel dicta consectetur
+        quibusdam quo, ad dolore error dolorum modi est doloribus debitis,
+        perspiciatis omnis explicabo iure, itaque voluptatibus perferendis
+        cupiditate magni consequatur soluta asperiores expedita fugit. Et sunt
+        minima aliquam similique dolorem doloremque, quidem commodi quae iure
+        architecto, doloribus ullam accusamus. Ratione voluptatum non dolore
+        odio saepe laboriosam minus numquam labore accusamus libero veniam
+        iusto perspiciatis cum reprehenderit culpa assumenda corporis totam
+        quasi, quidem, eligendi obcaecati, omnis atque repellat dignissimos.
+        Nisi error quod repellat aliquid ut explicabo eius ipsum, ab quasi
+        dolorem reprehenderit atque facilis et inventore similique unde porro
+        veritatis quae consequatur provident perferendis esse assumenda.
+        Dolore porro inventore, expedita at minima accusamus vel possimus
+        corporis enim dolor? Quisquam et deserunt ad. Sapiente alias repellat
+        saepe commodi iste modi. Adipisci natus quaerat odio perspiciatis?
+        Ipsam inventore quisquam, mollitia at veritatis qui cupiditate
+        explicabo vel. Officiis consectetur eveniet quos voluptas deleniti
+        officia incidunt dolor sequi laudantium non ratione quia aliquid
+        cupiditate reprehenderit iste dignissimos excepturi aspernatur,
+        quibusdam obcaecati et. Fugit, itaque pariatur molestiae quasi officia
+        temporibus quam iste? Repellendus ipsum sapiente, vitae provident
+        eaque ex nulla natus laborum. Esse iste impedit dolor magni molestiae
+        voluptatem, aliquam quidem earum aperiam cumque minus sit itaque
+        tempore sapiente ipsum quibusdam eius blanditiis quaerat corporis
+        quisquam reiciendis nobis reprehenderit laudantium! Porro quam
+        inventore nemo quia unde nam maxime perspiciatis, aspernatur assumenda
+        modi facere optio velit officiis voluptates culpa nostrum. Repudiandae
+        cum facere, ab accusantium excepturi hic unde quia aliquid, ipsam,
+        odio commodi asperiores consequuntur praesentium. Ipsum aperiam,
+        officia placeat velit, sed quod cupiditate dolor, saepe officiis nihil
+        magnam omnis veniam assumenda atque? Ut iusto, perferendis doloremque,
+        doloribus est earum voluptas laborum culpa itaque sunt quod mollitia
+        recusandae ab adipisci quibusdam repellendus eum! Soluta, ducimus
+        explicabo harum, eos nemo quis est iste consequuntur numquam eligendi
+        omnis obcaecati laborum quibusdam sapiente, enim exercitationem
+        aliquid veritatis nulla magnam alias odit! Perspiciatis placeat nobis
+        error facilis, earum porro, iusto non corrupti sapiente illum eum
+        excepturi soluta molestias minus hic ut illo ipsam recusandae impedit!
+        Necessitatibus saepe sed nesciunt dolore itaque harum quis iure
+        asperiores tenetur neque vel est amet, inventore excepturi, nihil quas
+        non veritatis rem quos, natus officia dolorum. Delectus similique non
+        fugit earum deserunt, commodi iure consequuntur odio exercitationem,
+        rem quas neque iste aut? Iste illo sit aliquam incidunt adipisci
+        laboriosam suscipit eos obcaecati mollitia enim blanditiis cumque
+        accusamus sequi, maiores possimus itaque iusto nam necessitatibus
+        aperiam ad saepe, in minus, nemo fugiat. Unde id alias necessitatibus,
+        sed odio explicabo iure, mollitia libero excepturi ducimus, ut quaerat
+        ratione in. Ex omnis reiciendis hic dignissimos facilis minima debitis
+        esse, alias molestias! Laboriosam tempora minus eos dicta! Nobis unde
+        doloribus accusamus, nam molestiae cum voluptate, eius exercitationem
+        nihil voluptas pariatur dicta excepturi porro soluta, doloremque quae
+        tempora odio beatae? Asperiores laboriosam officiis, perferendis
+        illum, praesentium ipsam facilis deserunt eligendi cupiditate
+        quibusdam, saepe molestias. Culpa incidunt alias eos in delectus, quae
+        ipsam quod odio ad exercitationem voluptatum soluta molestiae
+        explicabo perferendis rem ipsa sapiente, doloremque mollitia tempora
+        dolorem sunt ipsum aliquid. Fuga, adipisci. Doloribus placeat rerum
+        ratione obcaecati excepturi totam provident eius atque repudiandae.
+        Minus nulla nam iure ab officiis itaque perspiciatis vero dolorem
+        soluta inventore ipsum ratione error quaerat et facilis magnam at
+        asperiores natus, incidunt quo commodi. Hic aperiam, qui harum ratione
+        possimus reprehenderit neque non quis? Doloremque dolorum corporis
+        molestiae sunt. Id facilis aperiam debitis cum architecto, quia vitae
+        sint modi, a suscipit sapiente. Placeat exercitationem praesentium
+        voluptates laboriosam ex, repellendus culpa, ut, impedit deserunt quae
+        eveniet autem quos similique tempore sunt. Nobis est porro saepe
+        assumenda enim ut sapiente amet incidunt officia sunt, ipsa,
+        distinctio similique et soluta culpa, cupiditate nam eaque velit rerum
+        aperiam mollitia odio deleniti. Expedita eius excepturi quia officia
+        qui temporibus maiores in! Voluptas, incidunt? Necessitatibus eos
+        harum sint animi vero. Architecto eligendi est inventore repellat,
+        obcaecati explicabo aspernatur aliquam perspiciatis maxime quia dolor
+        velit. Sit dolore eligendi reiciendis nostrum repellendus debitis qui
+        modi, saepe libero labore at perspiciatis! Tempora ea modi quibusdam
+        provident esse at nisi id facere repellendus ad. Dolorum animi non
+        esse iure commodi mollitia voluptates officiis, iusto tempore nihil
+        saepe veritatis ducimus unde recusandae ratione nostrum nisi nesciunt.
+        Quidem adipisci consectetur libero? Similique qui nemo molestias ex
+        veniam tempore quisquam mollitia debitis, totam rerum excepturi aut
+        blanditiis quia autem facere deleniti impedit, quae pariatur
+        veritatis? Suscipit eveniet libero sapiente rerum maxime? Repudiandae
+        suscipit saepe officia, minus voluptas totam explicabo sint, libero
+        cupiditate reiciendis voluptates consequatur reprehenderit dolores
+        enim unde quidem! Incidunt possimus inventore velit beatae rem nihil
+        minima magni quo iusto sequi nulla mollitia deleniti consequatur
+        voluptates perferendis id laudantium consequuntur labore, quaerat
+        commodi rerum? Odit corrupti expedita pariatur modi illo quae quaerat
+        qui deserunt, id placeat autem, provident aspernatur recusandae dolore
+        ipsa voluptatem accusamus eum rerum quibusdam fuga mollitia in sint
+        reiciendis maiores. Atque repellendus minima iure reprehenderit,
+        aliquid quaerat neque dolorem repudiandae quas error!
+      </div>
+    </div>
+  </div>
+  <script src="js/swipe-events.js"></script>
+  <script src="js/sideBar.js"></script>
+  <script>
+    initializeSideBar("app_side_bar", true);
+  </script>
+</body>
+
 </html>
