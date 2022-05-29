@@ -29,7 +29,14 @@
           <div class="side_bar__icons_bar__brand">
             <span class="material-icons-outlined"> diamond </span>
           </div>
-          <div class="side_bar__icons_bar__menu">
+          <div class="side_bar__icons_bar__menu selected">
+            <span
+              class="icon_menu"
+              menuName="search_options"
+              menu-title="Busqueda"
+            >
+              <span class="material-icons-outlined"> search </span>
+            </span>
             <span class="icon_menu" menuName="home" menu-title="Home">
               <span class="material-icons-outlined"> home </span>
             </span>
@@ -61,75 +68,92 @@
           <div class="side_bar__content__title">Dashboard</div>
           <div class="side_bar__menus">
             <ul
-              class="side_bar__content__menu"
-              menuFor="home"
-              menu-options-title="Home"
+              class="side_bar__content__menu open"
+              menuFor="search_options"
+              menu-options-title="Busqueda"
             >
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >grid_view</span
-                  >
-                  Principal</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >person</span
-                  >
-                  Customers</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >notifications</span
-                  >
-                  Notifications</a
-                >
-              </li>
+              <div class="search__options">
+                <input
+                  type="text"
+                  placeholder="Buscar Opcion"
+                  class="search__options__input"
+                />
+                <span class="material-icons-outlined">search</span>
+              </div>
+              <div class="search__results" id="options__search__result"></div>
             </ul>
-            <ul
-              class="side_bar__content__menu"
-              menuFor="analytics"
-              menu-options-title="Analytics"
-            >
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >grid_view</span
+            <div class="menus">
+              <ul
+                class="side_bar__content__menu"
+                menuFor="home"
+                menu-options-title="Home"
+              >
+                <li class="side_bar__content__menu__option">
+                  <a href="">
+                    <span
+                      class="material-icons-outlined side_bar__content__menu__item__icon"
+                      >grid_view</span
+                    >
+                    Principal Home</a
                   >
-                  Principal</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >real_estate_agent</span
+                </li>
+                <li class="side_bar__content__menu__option">
+                  <a href="">
+                    <span
+                      class="material-icons-outlined side_bar__content__menu__item__icon"
+                      >person</span
+                    >
+                    Customers</a
                   >
-                  Monthly sales</a
-                >
-              </li>
-              <li class="side_bar__content__menu__option">
-                <a href="">
-                  <span
-                    class="material-icons-outlined side_bar__content__menu__item__icon"
-                    >query_stats</span
+                </li>
+                <li class="side_bar__content__menu__option">
+                  <a href="">
+                    <span
+                      class="material-icons-outlined side_bar__content__menu__item__icon"
+                      >notifications</span
+                    >
+                    Notifications</a
                   >
-                  Employees Stats</a
-                >
-              </li>
-            </ul>
-            <ul class="side_bar__content__menu" menuFor="layers"></ul>
-            <ul class="side_bar__content__menu" menuFor="checks"></ul>
-            <ul class="side_bar__content__menu" menuFor="goals"></ul>
-            <ul class="side_bar__content__menu" menuFor="persons"></ul>
+                </li>
+              </ul>
+              <ul
+                class="side_bar__content__menu"
+                menuFor="analytics"
+                menu-options-title="Analytics"
+              >
+                <li class="side_bar__content__menu__option">
+                  <a href="">
+                    <span
+                      class="material-icons-outlined side_bar__content__menu__item__icon"
+                      >grid_view</span
+                    >
+                    Principal Stats</a
+                  >
+                </li>
+                <li class="side_bar__content__menu__option">
+                  <a href="">
+                    <span
+                      class="material-icons-outlined side_bar__content__menu__item__icon"
+                      >real_estate_agent</span
+                    >
+                    Monthly sales</a
+                  >
+                </li>
+                <li class="side_bar__content__menu__option">
+                  <a href="">
+                    <span
+                      class="material-icons-outlined side_bar__content__menu__item__icon"
+                      >query_stats</span
+                    >
+                    Employees Stats</a
+                  >
+                </li>
+              </ul>
+              <ul class="side_bar__content__menu" menuFor="layers"></ul>
+              <ul class="side_bar__content__menu" menuFor="checks"></ul>
+              <ul class="side_bar__content__menu" menuFor="goals"></ul>
+              <ul class="side_bar__content__menu" menuFor="persons"></ul>
+            </div>
           </div>
           <div class="side_bar__content__profile">
             <div class="profile__info">

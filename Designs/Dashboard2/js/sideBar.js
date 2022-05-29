@@ -41,7 +41,23 @@ function initializeSideBar(sidebarId, debug = false) {
     currentMenuName = menuName;
     return true;
   }
-
+  function onSearchOption(event) {
+    var value = event.target.value;
+    var all_options = document.querySelectorAll(
+      ".menus .side_bar__content__menu__option"
+    );
+    var result__container = document.getElementById("options__search__result");
+    result__container.innerHTML = "";
+    if (value)
+      [...all_options].forEach((option) => {
+        if (
+          option.firstElementChild.innerText
+            .toLowerCase()
+            .includes(value.toLowerCase())
+        )
+          result__container.innerHTML += option.outerHTML;
+      });
+  }
   let sidebar = document.getElementById(sidebarId);
   if (!sidebar) throw new Error(`SideBar with id '${sidebarId}' not found`);
   let sidebarIconsMenu = sidebar.querySelector(".side_bar__icons_bar__menu");
@@ -59,6 +75,9 @@ function initializeSideBar(sidebarId, debug = false) {
     throw new Error(
       `SideBar Menu Title with className side_bar__content__title not found`
     );
+  let search_options_input = document.querySelector(".search__options__input");
+  if (!search_options_input)
+    throw new Error(`input with search__options__input class not found`);
 
   if (debug) console.log("Side bar initialized successfully");
   sidebarIconsMenu.addEventListener("click", onMenuIconItemClick);
@@ -79,4 +98,6 @@ function initializeSideBar(sidebarId, debug = false) {
       console.log(error);
     }
   });
+  search_options_input.addEventListener("change", onSearchOption);
+  search_options_input.addEventListener("keyup", onSearchOption);
 }

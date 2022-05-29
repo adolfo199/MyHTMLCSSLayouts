@@ -293,6 +293,28 @@ body {
   border-radius: var(--side-bar__icons_bar-icons-border-radius);
   cursor: pointer;
 }
+
+.search__options {
+  display: flex;
+  --input-icon-size: 20px;
+  align-items: center;
+}
+.search__options__input {
+  width: 100%;
+  border-radius: var(--side-bar__icons_bar-icons-border-radius);
+  border: none;
+  outline: none;
+  padding: 0 0.6em;
+  font-size: 14px;
+}
+.search__options span {
+  width: var(--input-icon-size);
+  position: relative;
+  left: calc(-1 * var(--input-icon-size) - 0.3em);
+}
+.search__results {
+  padding-top: 0.6em;
+}
 /*Break points*/
 @media (max-width: 575.98px) {
 }
