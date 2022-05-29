@@ -98,6 +98,5 @@ function initializeSideBar(sidebarId, debug = false) {
       console.log(error);
     }
   });
-  search_options_input.addEventListener("change", onSearchOption);
   search_options_input.addEventListener("keyup", onSearchOption);
 }
