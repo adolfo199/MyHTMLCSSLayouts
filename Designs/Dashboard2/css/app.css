@@ -23,6 +23,7 @@ body {
   --side-bar__toggle_btn-size: 30px;
   --on-toggle-transition-time: 0.3s;
   --on-toggle-transition: width var(--on-toggle-transition-time) ease-in-out;
+  --menu--profile-height: 70px;
 }
 .app__container {
   background-color: var(--app-bkg-color);
@@ -152,7 +153,8 @@ body {
   width: calc(100% - 5px);
 }
 .side_bar__content {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 0;
   height: 100%;
   background-color: var(--side-bar-color);
@@ -255,6 +257,41 @@ body {
 :not(.side_bar.hidden).toggled ~ .app__content .side_bar__toggle_btn {
   /* display: none; */
   left: calc(var(--side-bar-width) + 10px);
+}
+.side_bar__content {
+  /* border: 0.1px solid red; */
+}
+.side_bar__content__profile {
+  display: flex;
+  position: relative;
+  height: var(--menu--profile-height);
+  width: calc(var(--side-bar-width) - var(--side-bar__icons_bar-width));
+  overflow: hidden;
+  margin-top: auto;
+  /* border: 0.1px solid red; */
+  color: var(--side-bar__icons_bar-icons-color);
+  padding: 0.6em;
+  align-items: center;
+  gap: 5px;
+  font-weight: bolder;
+  font-family: "Poppins";
+  font-size: 12px;
+  justify-content: space-around;
+}
+.side_bar__content__profile .logout__icon {
+  color: var(--side-bar__icons_bar-icons-color);
+  cursor: pointer;
+}
+.side_bar__content__profile .logout__icon span {
+  transition: all var(--on-toggle-transition-time) ease-in-out;
+  padding: 2.5px;
+}
+
+:is(.side_bar__icons_bar_configs, .side_bar__content__profile .logout__icon)
+  span:hover {
+  background-color: var(--side-bar__icons_bar-icons-bkg-color);
+  border-radius: var(--side-bar__icons_bar-icons-border-radius);
+  cursor: pointer;
 }
 /*Break points*/
 @media (max-width: 575.98px) {
