@@ -1,0 +1,17 @@
+.white__theme {
+  --app-bkg-color: rgb(231, 226, 236);
+  --side-bar-darken-color: #dde2e0;
+  --side-bar-color: #ffffff;
+  --side-bar__icons_bar-icons-color: rgba(0, 0, 0, 0.699);
+  --side-bar__icons_bar-icons-bkg-color: rgba(7, 7, 7, 0.4);
+  --side-bar__icons_bar-icons-bkg-mobile-color: rgba(7, 7, 7, 0.4);
+  --side-bar__icons_bar-icons-tooltip-color: #000000;
+  --side-bar__icons_bar-icons-tooltip-bkg-color: #82828270;
+  --side-bar__icons_bar-icons-shadow: inset -3px 0px 9px #00000026;
+  --side-bar__title-color: rgb(2, 2, 2);
+  --side-bar__menu__items-color: rgb(0, 0, 0);
+  --side-bar__menu__search__input-border-color: white;
+  --side-bar__menu__search__input-bkg-color: white;
+  --side-bar__menu__search__input-bkg-color: white;
+  --cursor--color: deeppink;
+}
