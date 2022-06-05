@@ -57,7 +57,7 @@
       <div class="side_bar__content">
         <div class="side_bar__content__title">Dashboard</div>
         <div class="side_bar__menus">
-          <ul class="side_bar__content__menu open" menuFor="search_options" menu-options-title="Busqueda">
+          <ul class="side_bar__content__menu" menuFor="search_options" menu-options-title="Busqueda">
             <div class="search__options">
               <input type="text" placeholder="Buscar Opcion" class="search__options__input" />
               <span class="material-icons-outlined">search</span>
@@ -65,16 +65,37 @@
             <div class="search__results" id="options__search__result"></div>
           </ul>
           <div class="menus">
-            <ul class="side_bar__content__menu" menuFor="home" menu-options-title="Home">
-              <li class="side_bar__content__menu__option">
+            <ul class="side_bar__content__menu open" menuFor="home" menu-options-title="Home">
+              <li class="side_bar__content__menu__option submenu__parent__selected" submenusname="principal_home">
+                <!-- <a> -->
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">grid_view</span>
+                Principal Home
+                <!-- </a> -->
+              </li>
+              <li class="side_bar__content__menu__option submenu__open" childof="principal_home" style="--deep:1">
                 <a href="">
                   <span class="material-icons-outlined side_bar__content__menu__item__icon">grid_view</span>
-                  Principal Home</a>
+                  Home Child 1</a>
               </li>
-              <li class="side_bar__content__menu__option">
+              <li class="side_bar__content__menu__option submenu__parent__selected submenu__open"
+                childof="principal_home" submenusname="home_child_2" style="--deep:1">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">grid_view</span>
+                Home Child 2
+              </li>
+              <li class="side_bar__content__menu__option submenu__open" childof="home_child_2" style="--deep:2">
+                <a href="">
+                  <span class="material-icons-outlined side_bar__content__menu__item__icon">grid_view</span>
+                  Child Deep 1
+                </a>
+              </li>
+              <li class="side_bar__content__menu__option submenu__parent__selected" submenusname="customers">
+                <span class="material-icons-outlined side_bar__content__menu__item__icon">person</span>
+                Customers
+              </li>
+              <li class="side_bar__content__menu__option submenu__open" childof="customers" style="--deep:1">
                 <a href="">
                   <span class="material-icons-outlined side_bar__content__menu__item__icon">person</span>
-                  Customers</a>
+                  CustomersSub 1</a>
               </li>
               <li class="side_bar__content__menu__option">
                 <a href="">

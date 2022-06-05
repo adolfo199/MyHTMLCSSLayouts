@@ -53,11 +53,49 @@ function initializeSideBar(sidebarId, debug = false) {
         if (
           option.firstElementChild.innerText
             .toLowerCase()
-            .includes(value.toLowerCase())
+            .includes(value.toLowerCase()) > -1 &&
+          !option.getAttribute("submenusname")
         )
           result__container.innerHTML += option.outerHTML;
       });
   }
+  function onClickOnMenuContainerHandler(event) {
+    let element = event.target;
+    isChildren = element.getAttribute("childof");
+    isSubMenuParent = element.getAttribute("submenusname");
+
+    if (!isSubMenuParent) {
+      return;
+    }
+
+    function closeChilds(element_parent) {
+      var parent_name = element_parent.getAttribute("submenusname");
+      let allChildrens = document.querySelectorAll(
+        `li[childof=${parent_name}]`
+      );
+      [...allChildrens].forEach((child) => {
+        child.classList.remove("submenu__open");
+        if (child.getAttribute("submenusname")) closeChilds(child);
+      });
+      element_parent.classList.remove("submenu__parent__selected");
+    }
+    function openChilds(element_parent) {
+      var parent_name = element_parent.getAttribute("submenusname");
+      let allChildrens = document.querySelectorAll(
+        `li[childof=${parent_name}]`
+      );
+      [...allChildrens].forEach((child) => {
+        child.classList.add("submenu__open");
+      });
+      element_parent.classList.add("submenu__parent__selected");
+    }
+    if (element.classList.contains("submenu__parent__selected")) {
+      closeChilds(element);
+      return;
+    }
+    openChilds(element);
+  }
+
   let sidebar = document.getElementById(sidebarId);
   if (!sidebar) throw new Error(`SideBar with id '${sidebarId}' not found`);
   let sidebarIconsMenu = sidebar.querySelector(".side_bar__icons_bar__menu");
@@ -78,7 +116,8 @@ function initializeSideBar(sidebarId, debug = false) {
   let search_options_input = document.querySelector(".search__options__input");
   if (!search_options_input)
     throw new Error(`input with search__options__input class not found`);
-
+  let menus_container = document.querySelector(".side_bar__menus .menus");
+  if (!menus_container) throw new Error(`menus container missed!!`);
   if (debug) console.log("Side bar initialized successfully");
   sidebarIconsMenu.addEventListener("click", onMenuIconItemClick);
   sidebarToggleBtn.addEventListener("click", onToggleBtnClick);
@@ -99,4 +138,5 @@ function initializeSideBar(sidebarId, debug = false) {
     }
   });
   search_options_input.addEventListener("keyup", onSearchOption);
+  menus_container.addEventListener("click", onClickOnMenuContainerHandler);
 }
